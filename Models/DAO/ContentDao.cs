@@ -14,6 +14,11 @@ namespace Models.DAO
         {
             db = new OnlineShopDbContext();
         }
-
+        public long Insert(Content entity)
+        {
+            db.Contents.Add(entity);
+            db.SaveChanges();
+            return entity.ID;
+        }
     }
 }
